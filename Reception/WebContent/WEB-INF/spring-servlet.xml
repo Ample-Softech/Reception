@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+      
+      <mvc:annotation-driven />                     
+   <context:annotation-config /> 
+   <context:component-scan base-package="com.control"></context:component-scan>
+
+<bean id="viewResolver"
+      class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/jsp/"/>
+    <property name="suffix" value=".jsp"/>
+   </bean>
+   
+ <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ <property name="DriverClassName" value="com.mysql.jdbc.Driver"></property>
+ <property name="url" value="jdbc:mysql://localhost:3306/finalerp"></property>
+ <property name="username" value="root"></property>
+ <property name="password" value="root"></property>
+ </bean> 
+ 
+ <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+ <property name="dataSource" ref="ds"></property>
+ </bean>
+ 
+ <bean id="cdao" class="com.dao.ClientDao">
+ <property name="template" ref="jt"></property>
+ </bean>
+
+	<bean id="edao" class="com.dao.EnquiryDao">
+	 <property name="template" ref="jt"></property>
+	 </bean>
+
+	<bean id="fdao" class="com.dao.FollowupDao">
+	 <property name="template" ref="jt"></property>
+	 </bean>
+	 
+	<bean id="nedao" class="com.dao.NewEnquiryDao">
+	 <property name="template" ref="jt"></property>
+	 </bean>
+	 
+	 <bean id="dao" class="com.dao.Dao">
+	 <property name="template" ref="jt"></property>
+	 </bean>
+
+	<bean id="qdao" class="com.dao.QuotationDao">
+	 <property name="template" ref="jt"></property>
+	 </bean>
+
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/contactform/**" location="/contactform/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/fonts/**" location="/fonts/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
+
+ </beans>
