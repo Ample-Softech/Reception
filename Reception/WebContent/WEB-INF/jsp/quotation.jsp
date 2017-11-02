@@ -34,56 +34,9 @@
 %>
 </head>
 <body class="homepage">   
-	<header id="header">
-        <nav class="navbar navbar-fixed-top" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index">Ample Softech</a>
-                </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index">Home</a></li>
-                        <li><a href="/Reception/followup">Follow up</a></li>
-                        <li><a href="/Reception/about-us.html">About Us</a></li>
-                        <li><a href="/Reception/services.html">Services</a></li>
-                        <%if(session.getAttribute("userLog")=="loggedIn") {%>
-						<li><a href="/Reception/logout">Logout</a></li><%} else{%>
-                        <li><a href="/Reception/loginpage">Login</a></li><%} %>                                                
-                        </ul>
-                </div>
-                
-                
-                
-            </div><!--/.container-->
-        </nav><!--/nav-->
+	<jsp:include page="head.jsp"></jsp:include>
+		<jsp:include page="setup.jsp"></jsp:include>
 		
-		
-		<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setups
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        	 <li><a href="/Reception/technologysetup">Technology</a></li>
-     		<li><a href="/Reception/sourceofinfosetup">Source of Information</a></li>        
-     	</ul>
-      </li>
-		<li class="active"><a href="/Reception/viewfollowupreminder/1">Follow up Reminder</a></li>
-		<li><a href="/Reception/viewfollowup/1">Follow up View</a></li> 
-    </ul>
-  </div>
-</nav>
-		
-    </header><!--/header-->
-	
 	<section id="blog" class="container">
      	<!-- <div class="container"> -->
             <form class="form-horizontal" role="form" name="quotation" >
