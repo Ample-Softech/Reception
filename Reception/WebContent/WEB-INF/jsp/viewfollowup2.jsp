@@ -30,16 +30,7 @@
 	<script src="js/dcalendar.picker.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-	
-  
-<!-- =======================================================
-        Theme Name: Gp
-        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->  
-
-<%
+	<%
 	if(session.getAttribute("userLog")!="loggedIn") {
 		response.sendRedirect("/Reception/loginpage");
 	} 
@@ -51,16 +42,12 @@
 		 var v=document.forms["mytech"].TechnologyId.value;
 		 
 		 document.forms["mytech"].submit();
-		 /* var tid=document.selecttech.TechnologyId.value; */  
-		/* document.getElementById("test").value = tid; */
 	}
 	 
 	 function searchsource()
 		{
 			 var v2=document.forms["mysource"].SourceId.value;
 			 document.forms["mysource"].submit();
-			 /* var tid=document.selecttech.TechnologyId.value; */  
-			/* document.getElementById("test").value = tid; */
 		}
 	</script>
 	
@@ -77,7 +64,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index">Gp.</a>
+                    <a class="navbar-brand" href="index">AmpleSoftech</a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -180,8 +167,6 @@
 	<tr>
 	
 	<td>${st.getReminderId()}</td>
-	<%-- <td>${st.getFollowUpId()}</td>
-	<td>${st.getEnquiryId() }</td> --%>
 	<td>${st.getClientName() }</td>
 	<td>${st.getClientContact() }</td>
 	<td>${st.getTechnology()}</td>
@@ -195,7 +180,6 @@
 	<td><a href="/Reception/mail/${st.getFollowUpId()}"><span class="glyphicon glyphicon-envelope"></span></a></td>
 	<td><a href="/Reception/quote/${st.getFollowUpId() }"><span class="glyphicon glyphicon-send"></span></a></td>
 	<td><a href="/Reception/port/${st.getClientId() }"><span class="glyphicon glyphicon-send"></span></a></td>
-	<%-- <td><a href="/Reception/forminvoice/${ st.getClientId()}">Invoice</a></td> --%>
 	</tr>
 	</c:forEach>
 	</table>
@@ -204,104 +188,7 @@
 
 	<!-- ---------------------------------------------------------------------------------------------- -->
 	
-	<section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>                          
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-	
-	<div class="top-bar">
-		<div class="container">
-			<div class="row">
-			    <div class="col-lg-12">
-				   <div class="social">
-						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
-						</ul>
-				   </div>
-                </div>
-			</div>
-		</div><!--/.container-->
-	</div><!--/.top-bar-->
-	
-	<footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->
+	<jsp:include page="footer.jsp"></jsp:include>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>
