@@ -257,12 +257,6 @@
 				<form  name="Enquiry" action="newenquiry1" >
 					<div class="col-md-12 col-sm-12">
 					
-					<div class="form-group col-md-6 col-sm-6">
-            				<label for="abc">ABc	</label>
-            				<input type="datetime-local" name="abc" class="form-control input-sm" id="na" placeholder="" required>
-        				</div>
-        
-
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientName">Client Name*	</label>
             				<input type="text" name="ClientName" class="form-control input-sm" id="name" placeholder=""  onchange="ClientNameValidation();" required>
