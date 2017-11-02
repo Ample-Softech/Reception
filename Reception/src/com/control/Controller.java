@@ -52,7 +52,7 @@ import com.model.Invoice;
 
 @SessionAttributes("thought")
 public class Controller {
-	public int perpage=5;
+	
 	
 	@Autowired
 	ClientDao cdao;	//USED IN MOST OF THE FUNCTIONS IN CONTROLLER
@@ -77,7 +77,7 @@ public class Controller {
 	
 	@Autowired
 	HttpServletResponse response;
-	
+	public int perpage=10;
 	@Autowired
 	QuotationDao qdao;
 	
@@ -239,34 +239,18 @@ public class Controller {
 					return new ModelAndView("followupmodesetup","list",flist);
 				}
 	
-//---------------------------------------------------------------------------------------------------------	
-	// Write Enquiry insertion page code here...............................
-		@RequestMapping("/newenquiry")
-		public ModelAndView register(@ModelAttribute ("enq") Enquiry enq) {
-
-			Client c=new Client();
+//---------------------------------------------------------------------------------------------------------			
+		@RequestMapping("/newenquiry1")
+		public ModelAndView registerq(@ModelAttribute ("enq") NewEnquiry enq,@ModelAttribute ("c") Client c) {
 			NewEnquiry e=new NewEnquiry();
-			
-			c.setClientName(enq.getClientName());
-			c.setClientFirm(enq.getClientFirm());
-			c.setClientEmailId(enq.getClientEmailId());
-			c.setClientContact(enq.getClientContact());
-			c.setClientAddress(enq.getClientAddress());
-			c.setClientCity(enq.getClientCity());
-			c.setClientState(enq.getClientState());
-			c.setClientCountry(enq.getClientCountry());
 			int id=cdao.insert(c);
-			
 			if(id==0)
 				return new ModelAndView("index","msg","user is already present with this mobile number,cannot save your query");
-			
-			e.setClientId(id);
-			e.setEnquiryDescription(enq.getEnquiryDescription());
-			e.setTechnologyId(enq.getTechnologyId());
-			e.setSourceId(enq.getSourceId());
-			edao.save(e);
+			enq.setClientId(id);
+			edao.save(enq);
 			return new ModelAndView("index","msg","Enquiry saved successfully");
 		}
+
 //----------------------------------------------------------------------------------------------------------------------
 		// Write About us page code here...............................
 		@RequestMapping("/followup")
@@ -703,47 +687,27 @@ public class Controller {
 		// Write eDIT FOLLOW UP CODE page code here...............................
 
 		@RequestMapping(value="/editfollowup", method=RequestMethod.POST)		
-		public ModelAndView editfollowup(@ModelAttribute("rf") ReminderForm rf)
+		public ModelAndView editfollowup(@ModelAttribute("rf") ReminderForm rf,@ModelAttribute ("rt") ReminderTable rt)
 		{
-			/*System.out.println("Controller--->editfollowup--"+rf.getClientName()+"  "+rf.getClientContact()+"  "+rf.getFollowUpId()+"  "+rf.getFollowUpMode()+"  "+rf.getFollowUpDate()+"  "+rf.getClientEmailId()+"  "+rf.getEnquiryId()+"  "+rf.getNeeded()+" Next Followup Date:   "+rf.getNextFollowUpDate()+"  "+rf.getResponse());*/
-			ReminderTable rt=new ReminderTable();
-			rt.setFollowUpId(rf.getFollowUpId());
-			
-			rt.setFollowUpDate(rf.getFollowUpDate());
-			rt.setNextFollowUpDate(rf.getNextFollowUpDate());
-			
 			rt.setModeId(dao.getModeIdByMode(rf.getFollowUpMode())); //gets FollowUpModeId
-			
-			rt.setNeeded(rf.getNeeded());
-			rt.setResponse(rf.getResponse());
-			
 			Admin a=(Admin) sess.getAttribute("user");
 			rt.setEntryBy(a.getUsername());						//11 EntryBy
 			
 			Followup f=fdao.getFollowUpById(rf.getFollowUpId());
-			if(rf.getNeeded().equals("No"))
-			{
+			if(rf.getNeeded().equals("No")){
 				f.setStatus("Closed");
 				fdao.updateFollowUpByStatus(f);
 			}
-			else
-			{
-				f.setStatus("Open");
-				fdao.updateFollowUpByStatus(f);
-			}
-			
+			else{
+				/*f.setStatus("Open");fdao.updateFollowUpByStatus(f);*/			}			
 			try{
 				dao.insertIntoReminderTable(rt);
 			}
-			catch(BadSqlGrammarException e)
-			{
+			catch(BadSqlGrammarException e){
 				return new ModelAndView("error","error",e.getMessage());
 			}
-			
 			return new ModelAndView("redirect:/viewfollowupreminder");
 		}
-		
-
 		
 //--------------------------------------------------------------------------------------------------------------------		
 	// Write About us page code here...............................
