@@ -42,7 +42,7 @@ try
 	Font f3 = new Font(Font.HELVETICA, 22,Font.UNDEFINED, java.awt.Color.red);
  	addCell(headerTable, "Quotation", Element.ALIGN_MIDDLE, Element.ALIGN_CENTER,0,f3);
 	
- 	Image image = Image.getInstance("C:\\Users\\omcsh\\git\\Reception\\Reception\\WebContent\\images\\AmpleLogo.png");
+ 	Image image = Image.getInstance("C:\\Users\\santo\\git\\Reception\\Reception\\WebContent\\images\\AmpleLogo.png");
 	image.scaleAbsolute(200, 58);
 	document.add(image);
 	addCell(headerTable, "", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f1);
@@ -50,8 +50,6 @@ try
 	addCell(headerTable, "Shantiban comercial complex", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
 	addCell(headerTable, "Kothrud, pune, 411038", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
 	document.add(headerTable);
-	
-	
 	
 	Paragraph p = new Paragraph();
 	 p.setAlignment(Element.ALIGN_RIGHT);
@@ -96,6 +94,7 @@ out.clear(); // where out is a JspWriter
 out = pageContext.pushBody();
 
 %>
+
 
 </body>
 </html>
