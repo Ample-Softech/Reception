@@ -55,20 +55,28 @@ public class Controller {
 	
 	@Autowired
 	ClientDao cdao;	//USED IN MOST OF THE FUNCTIONS IN CONTROLLER
+
 	@Autowired
 	EnquiryDao edao;
+	
 	@Autowired
 	FollowupDao fdao;
+	
 	@Autowired
 	NewEnquiryDao nedao;
+	
 	@Autowired
 	Dao dao;	
+	
 	@Autowired
 	HttpSession sess;
+	
 	@Autowired
 	HttpServletRequest request;
+	
 	@Autowired
 	HttpServletResponse response;
+	
 	@Autowired
 	QuotationDao qdao;
 	
