@@ -12,15 +12,9 @@
     <link href="css/prettyPhoto.css" rel="stylesheet">      
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
-    <!-- =======================================================
-        Theme Name: Gp
-        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
 </head>
 
- <body class="homepage">   
+ <body class="homepage">
 	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
             <div class="container">
@@ -55,7 +49,7 @@
         <div class="container">			
 			<div class="skill-wrap clearfix">			
 				<div class="center wow fadeInDown">
-					<h2>About <span>Gp.</span></h2>
+					<h2>About <span>AmpleSoftech</span></h2>
 					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
 				</div>
 				
@@ -64,7 +58,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="joomla-skill">                                   
 								<p><em>85%</em></p>
-								<p>Joomla</p>
+								<p>Java</p>
 							</div>
 						</div>
 					</div>
@@ -73,7 +67,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="html-skill">                                  
 								<p><em>95%</em></p>
-								<p>HTML</p>
+								<p>HTML & CSS</p>
 							</div>
 						</div>
 					</div>
@@ -82,7 +76,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
 							<div class="css-skill">                                    
 								<p><em>80%</em></p>
-								<p>CSS</p>
+								<p>PHP</p>
 							</div>
 						</div>
 					</div>
@@ -91,7 +85,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
 							<div class="wp-skill">
 								<p><em>90%</em></p>
-								<p>Wordpress</p>                                     
+								<p>Testing</p>                                     
 							</div>
 						</div>
 					</div>					
@@ -101,8 +95,8 @@
 			<!-- our-team -->
 			<div class="team">
 				<div class="center wow fadeInDown">
-					<h2>Team of <span>Gp.</span></h2>
-					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+					<h2>Team of <span>AmpleSoft</span></h2>
+					
 				</div>
 
 				<div class="row clearfix">
@@ -235,71 +229,17 @@
 		</div><!--/.container-->
     </section><!--/about-us-->
 	
-	<section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>                          
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-	
-	<div class="top-bar">
+		
+		<div class="top-bar">
 		<div class="container">
 			<div class="row">
 			    <div class="col-lg-12">
 				   <div class="social">
 						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							<li><a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/uas/login"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://login.skype.com/login?message=signin_continue"><i class="fa fa-skype"></i></a></li>
 						</ul>
 				   </div>
                 </div>
@@ -311,28 +251,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+                    &copy; Ample Softech 2017. All Rights Reserved.
+                    
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
-    </footer><!--/#footer-->
+     </footer><!--/#footer-->
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>

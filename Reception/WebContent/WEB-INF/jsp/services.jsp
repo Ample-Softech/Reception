@@ -7,14 +7,7 @@
 <title>Services</title>
 <!-- Bootstrap -->
     <jsp:include page="/links.jsp"></jsp:include>
-    <!-- =======================================================
-        Theme Name: Gp
-        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
-
-</head>
+    </head>
   <body class="homepage">   
 	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
@@ -28,8 +21,7 @@
                     </button>
                     <a class="navbar-brand" href="index">Ample Softech</a>
                 </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
+	            <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index">Home</a></li>
                         <%if(session.getAttribute("userLog")=="loggedIn") {%>
@@ -43,8 +35,7 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-		
-    </header><!--/header-->
+	</header><!--/header-->
 	
 	<section id="services" class="service-item">
 	   <div class="container">
@@ -131,113 +122,16 @@
     </section><!--/#services-->
 
 	
-	<section id="feature" class="transparent-bg">
-		<div class="container">
-			<div class="get-started center wow fadeInDown">
-				<h2>Ready to get started</h2>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  magna aliqua. <br>  Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-				<div class="request">
-					<h4><a href="#">Request a free Quote</a></h4>
-				</div>
-			</div><!--/.get-started-->
-
-			<div class="clients-area center wow fadeInDown">
-				<h2>What our client says</h2>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 wow fadeInDown">
-					<div class="clients-comments text-center">
-						<img src="images/client1.png" class="img-circle" alt="">
-						<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-						<h4><span>-John Doe /</span>  Director of corlate.com</h4>
-					</div>
-				</div>
-				<div class="col-md-4 wow fadeInDown">
-					<div class="clients-comments text-center">
-						<img src="images/client2.png" class="img-circle" alt="">
-						<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-						<h4><span>-John Doe /</span>  Director of corlate.com</h4>
-					</div>
-				</div>
-				<div class="col-md-4 wow fadeInDown">
-					<div class="clients-comments text-center">
-						<img src="images/client3.png" class="img-circle" alt="">
-						<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-						<h4><span>-John Doe /</span>  Director of corlate.com</h4>
-					</div>
-				</div>
-			</div>
-		</div><!--/.container-->
-	</section><!--/#feature-->
-
-
-<section id="bottom">
-	<div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-		<div class="row">
-			<div class="col-md-3 col-sm-6">
-				<div class="widget">
-					<h3>Company</h3>
-					<ul>
-						<li><a href="#">About us</a></li>
-						<li><a href="#">We are hiring</a></li>
-						<li><a href="#">Meet the team</a></li>
-						<li><a href="#">Copyright</a></li>                           
-					</ul>
-				</div>    
-			</div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>                          
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-	
 	<div class="top-bar">
 		<div class="container">
 			<div class="row">
 			    <div class="col-lg-12">
 				   <div class="social">
 						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							<li><a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/uas/login"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://login.skype.com/login?message=signin_continue"><i class="fa fa-skype"></i></a></li>
 						</ul>
 				   </div>
                 </div>
@@ -249,28 +143,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+                    &copy; Ample Softech 2017. All Rights Reserved.
+                    
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
-    </footer><!--/#footer-->
+      </footer><!--/#footer-->
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>

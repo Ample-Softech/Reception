@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-
 <%
 	if(session.getAttribute("userLog")!="loggedIn") {
 		response.sendRedirect("/Reception/loginpage");
 	} 
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,18 +28,11 @@
     
     <style type="text/css">
 	@import url("css/bootstrap.css");
-
     </style>
 	<script src="js/jquery-1.12.4.js"></script>
 	<script src="js/dcalendar.picker.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-	<!-- =======================================================
-        Theme Name: Gp
-        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->  
 </head>
  <body class="homepage">   
 	<header id="header">
@@ -55,7 +45,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index">Gp.</a>
+                    <a class="navbar-brand" href="index">AmpleSoftech</a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -77,44 +67,28 @@
 
 		
 <!--------------------------------------Body --------------------------------------------------->		
-	<section class="homepage">	
-        <nav class="navbar " role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/Reception/viewfollowupreminder/1">Follow up Reminder</a></li>
-                        <li><a href="/Reception/viewfollowup/1">Follow up View</a></li>   
-                       <li><a href="/Reception/setups">Setups</a></li>
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-	     </section><!--/#middle-->
-	     
-
-	<!-- ---------------------------------------------------------------------------------------------- -->
-		<section>
-	<div class="container" align="right" >
-	<a href="technologysetup" class="btn btn-primary">Technology</a><br>
-	<a href="sourceofinfosetup" class="btn btn-primary">Source of Information</a><br>
-	<a href="followupmodesetup" class="btn disabled">Follow up Mode</a><br>
-	</div>
+<section>		
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setups
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        	 <li><a href="/Reception/technologysetup">Technology</a></li>
+     		<li><a href="/Reception/sourceofinfosetup">Source of Information</a></li>        
+     	</ul>
+      </li>
+		<li class="active"><a href="/Reception/viewfollowupreminder/1">Follow up Reminder</a></li>
+		<li><a href="/Reception/viewfollowup/1">Follow up View</a></li> 
+    </ul>
+  </div>
+</nav>		
 	</section>
 
 	
 	<section>
 	<div class="container" align="center">
-	
 	<h3>${msg }</h3>
 	<table class="table table-striped table-bordered table-hover table-inverse" >
 	<c:set var="source" value="${source}"></c:set>
@@ -140,6 +114,7 @@
 	</c:choose>
 	  
 	<thead><h1>Source Of Ads</h1></thead>
+	<div align="right"><a href="/Reception/addSourceOfInfo" class="btn btn-success">Add New Source</a></div>
 	<tr><th>Source ID</th><th>Source</th></tr>  
 	<c:forEach var="st" items="${list}">
 	<tr>
@@ -155,74 +130,16 @@
 	</div>
 	</section>
 	
-	
-	
-	
-	<section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>                          
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-	
-	<div class="top-bar">
+<div class="top-bar">
 		<div class="container">
 			<div class="row">
 			    <div class="col-lg-12">
 				   <div class="social">
 						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							<li><a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/uas/login"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://login.skype.com/login?message=signin_continue"><i class="fa fa-skype"></i></a></li>
 						</ul>
 				   </div>
                 </div>
@@ -234,25 +151,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+                    &copy; Ample Softech 2017. All Rights Reserved.
+                    
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer><!--/#footer-->

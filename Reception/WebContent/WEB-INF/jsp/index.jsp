@@ -41,20 +41,24 @@
          {
         	//  validation for ClientName---------------------------
         	var ClientName=document.Enquiry.ClientName.value;
-        	var cname = /^[A-Za-z]{2,50}$/;
+        	/* var cname = /^[A-Za-z]{2,50}$/; */
+        	var cname =/^[a-zA-Z-. ]+$/;
         	
              if (ClientName.length === 0 || ClientName === "")
             {
                 alert("Client Name is Required.");
-                ClientName.focus();
-                return false;
+                 ClientName.focus();
+                return false; 
+                var ClientName=document.Enquiry.ClientName.focus;
                 
             }
+            
             else if (!cname.test(ClientName))
             {
                 alert("Enter Valid Client Name.");
-                ClientName.focus();
-                return false;
+                 ClientName.focus();
+                return false; 
+                var ClientName=document.Enquiry.ClientName.focus;
             }
          }
     
@@ -181,12 +185,12 @@
           	var pin = /^[0-9_]{6}$/;
          if (pincode.length === 0 || pincode === "")
          {
-             //errors[errors.length] = " plz enter Discount amount.";
+             
              alert("plz enter pincode");
          }
          else if (!pin.test(pincode))
          {
-             //errors[errors.length] = " Enter Valid Discount.";
+             
         	 alert("Enter Valid pincode.");
          } 
          } 
@@ -216,9 +220,9 @@
              alert("plz enter Source Id");
          }
 	}
-         
-	//Validation code End-------------------------------------------------------------------------------- 	
-	</script>    
+     	
+	</script>
+	<!-- Validation code End-------------------------------------------------------------------------------- -->    
 <!-- =======================================================
         Theme Name: Gp
         Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
@@ -263,7 +267,7 @@
 	 <section id="feature" >
         <div class="container">
            <div class="center wow fadeInDown">
-                <p class="lead">Welcome to Ample Softech</p>
+                <p class="lead"></p>
                  <h2>Enquiry Form</h2>
             </div>
 
@@ -375,319 +379,19 @@
 
 <!-----------------------------------------------Form  End------------------------------------------>    
 
-</div><!--/#feature-->
-				
-	 <section id="recent-works">
-        <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Recent Works</h2>
-                <p class="lead">Works</p>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a> </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div>   
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item2.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div> 
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item3.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div>   
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item4.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">MultiPurpose theme </a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div>   
-                
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item5.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item5.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div>   
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item6.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item6.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div> 
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item7.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item7.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div>   
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item8.png" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item8.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div> 
-                        </div>
-                    </div>
-                </div>   
-            </div><!--/.row-->
-        </div><!--/.container-->
-  </section><!--/#recent-works-->	
 	
-    <section id="middle">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 wow fadeInDown">
-                    <div class="skill">
-                        <h2>Our Skills</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                        <div class="progress-wrap">
-                            <h3>Graphic Design</h3>
-                            <div class="progress">
-                              <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                <span class="bar-width">85%</span>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="progress-wrap">
-                            <h3>HTML</h3>
-                            <div class="progress">
-                              <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                               <span class="bar-width">95%</span>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="progress-wrap">
-                            <h3>CSS</h3>
-                            <div class="progress">
-                              <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="bar-width">80%</span>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="progress-wrap">
-                            <h3>Wordpress</h3>
-                            <div class="progress">
-                              <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                <span class="bar-width">90%</span>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!--/.col-sm-6-->
-
-                <div class="col-sm-6 wow fadeInDown">
-                    <div class="accordion">
-                        <h2>Why People like us?</h2>
-                        <div class="panel-group" id="accordion1">
-                          <div class="panel panel-default">
-                            <div class="panel-heading active">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-
-                            <div id="collapseOne1" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                  <div class="media accordion-inner">
-                                        <div class="pull-left">
-                                            <img class="img-responsive" src="images/accordion1.png">
-                                        </div>
-                                        <div class="media-body">
-                                             <h4>Adipisicing elit</h4>
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                        </div>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-                            <div id="collapseTwo1" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-                            <div id="collapseThree1" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-                            <div id="collapseFour1" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                              </div>
-                            </div>
-                          </div>
-                        </div><!--/#accordion1-->
-                    </div>
-                </div>
-
-            </div><!--/.row-->
-        </div><!--/.container-->
-    </section><!--/#middle-->
-	
-	<section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>                          
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-	
+    	
+		
 	<div class="top-bar">
 		<div class="container">
 			<div class="row">
 			    <div class="col-lg-12">
 				   <div class="social">
 						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							<li><a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/uas/login"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://login.skype.com/login?message=signin_continue"><i class="fa fa-skype"></i></a></li>
 						</ul>
 				   </div>
                 </div>
@@ -699,25 +403,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+                    &copy; Ample Softech 2017. All Rights Reserved.
+                    
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer><!--/#footer-->

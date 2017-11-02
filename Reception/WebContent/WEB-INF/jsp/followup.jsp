@@ -71,28 +71,22 @@
 
 <!--------------------------------------Body --------------------------------------------------->		
 	<section class="homepage">	
-        <nav class="navbar" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/Reception/viewfollowupreminder/1">Follow up Reminder</a></li>
-                        <li><a href="/Reception/viewfollowup/1">Follow up View</a></li>
-                       <!--  <li><a href="#">Next Follow up</a></li> -->
-                        <li><a href="/Reception/setups">Setups</a></li>
-                        </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setups
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        	 <li><a href="/Reception/technologysetup">Technology</a></li>
+     		<li><a href="/Reception/sourceofinfosetup">Source of Information</a></li>        
+     	</ul>
+      </li>
+		<li class="active"><a href="/Reception/viewfollowupreminder/1">Follow up Reminder</a></li>
+		<li><a href="/Reception/viewfollowup/1">Follow up View</a></li> 
+    </ul>
+  </div>
+</nav>
 	     </section><!--/#middle-->
 	
 	<section id="bottom">
@@ -155,11 +149,10 @@
 			    <div class="col-lg-12">
 				   <div class="social">
 						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							<li><a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/uas/login"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://login.skype.com/login?message=signin_continue"><i class="fa fa-skype"></i></a></li>
 						</ul>
 				   </div>
                 </div>
@@ -171,25 +164,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+                    &copy; Ample Softech 2017. All Rights Reserved.
+                    
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer><!--/#footer-->
