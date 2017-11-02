@@ -13,7 +13,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index">Home</a></li>
+                        <li class="active"><a href="/Reception/index">Home</a></li>
                         <%if(session.getAttribute("userLog")=="loggedIn") {%>
                         <li><a href="/Reception/followup">Follow up</a></li><%} %>
                         <li><a href="/Reception/about-us">About Us</a></li>

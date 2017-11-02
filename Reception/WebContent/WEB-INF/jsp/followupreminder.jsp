@@ -130,7 +130,7 @@
                 <div class="form-group">
                     <label for="Needed" class="col-sm-5 control-label">Need To Remind</label>
                     <div class="col-sm-7">
-                        <select name="Needed" onchange="search()" class="form-control input-md" id="Needed">
+                        <select name="Needed" onchange="search()" class="form-control input-md" id="Needed" required>
 						<option>Need to remind?</option>
 						<option value="y">Yes</option>
 						<option value="n">No</option>
@@ -141,16 +141,19 @@
                  <div class="form-group">
                     <label for="Response" class="col-sm-5 control-label">Response</label>
                     <div class="col-sm-7">
-                        <input type="text" name="Response" id="Response" placeholder="Response" class="form-control input-md" >
+                        <input type="text" name="Response" id="Response" placeholder="Response" class="form-control input-md" required>
                     </div>
                 </div>
                
                 <div class="form-group">
                     <label for="NextFollowUpDate" class="col-sm-5 control-label">Next Follow Up Date</label>
                     <div class="col-sm-7">
-                        <form:input path="NextFollowUpDate" name="NextFollowUpDate" id="NextFollowUpDate"   class="form-control input-md" />
+                    	
+                    	<input type="datetime-local"  name="NextFollowUpDate" id="NextFollowUpDate"   class="form-control input-md" required>
+                        <%-- <form:input path="NextFollowUpDate" name="NextFollowUpDate" id="NextFollowUpDate"   class="form-control input-md" /> --%>
                     </div>
                 </div>
+               
                
                
                 <div class="form-group">
