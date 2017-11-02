@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.BadSqlGrammarException;
+import org.springframework.jdbc.IncorrectResultSetColumnCountException;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -885,7 +886,7 @@ public class Controller {
 		}
 		
 		//View Invice page using Client and Quotation id.............
-		@RequestMapping("/port/{id}")
+		/*@RequestMapping("/port/{id}")
 		public ModelAndView po( @PathVariable int id)
 		{
 			ModelAndView mav=new ModelAndView("invoicenew");
@@ -903,8 +904,93 @@ public class Controller {
 				}
 			}
 			return mav;
+		}*/
+		
+		
+		@RequestMapping("/port/{id}")
+		public ModelAndView po( @PathVariable int id)
+		{
+			
+			ModelAndView mav=new ModelAndView("invoicenew");
+			Invoice ii=new Invoice();
+			List<Invoice> ilist=null;
+			int count=qdao.getQuatationCount(id);
+			
+				try{
+					if(count==1)
+					{
+						ii=qdao.searchInvoiceByClientId(id);
+						mav.addObject("ii",ii);
+					}
+					else if(count>1)
+					{
+						ModelAndView m2=new ModelAndView("showq");
+						ilist=qdao.getInvoices(id);
+						m2.addObject("list", ilist);
+						Invoice i1=ilist.get(1);
+						m2.addObject("cname", i1.getClientName());
+						return m2;
+					}
+					else if(count<1)
+					{
+						System.out.println("Error");
+						ModelAndView er=new ModelAndView("error");
+						er.addObject("error", "SOrry !! No Quotation Generated");
+						return er;
+					}
+					}catch(IncorrectResultSizeDataAccessException e)
+					{
+						if(e.getMessage().contains("Incorrect result size: expected 1, actual")){
+							
+							System.out.println("Error");
+							ModelAndView er=new ModelAndView("error");
+							er.addObject("error", "SOrry !! No Quotation Generated");
+							return er;
+						}	
+					}catch (IncorrectResultSetColumnCountException e2) {
+						if(e2.getMessage().contains("IncorrectResultSetColumnCountException: Incorrect column count: expected 1, actual"))
+						{
+							ModelAndView er=new ModelAndView("error");
+							er.addObject("error", "SOrry !! incorrect column size");
+							return er;
+						}
+					}catch (Exception e) {
+						System.out.println("Exception :"+e.getStackTrace());
+					}
+			return mav;
 		}
 		
+		
+		@RequestMapping("/port/2/{id}")
+		public ModelAndView pos( @PathVariable int id)
+		{
+			ModelAndView mav=new ModelAndView("invoicenew");
+			Invoice ii=new Invoice();
+				try{
+						ii=qdao.searchInvoiceByQuoteId(id);
+						mav.addObject("ii",ii);
+						return mav;
+					}catch(IncorrectResultSizeDataAccessException e)
+					{
+						if(e.getMessage().contains("Incorrect result size: expected 1, actual")){
+							
+							System.out.println("Error");
+							ModelAndView er=new ModelAndView("error");
+							er.addObject("error", "SOrry !! No Quotation Generated");
+							return er;
+						}	
+					}catch (IncorrectResultSetColumnCountException e2) {
+						if(e2.getMessage().contains("IncorrectResultSetColumnCountException: Incorrect column count: expected 1, actual"))
+						{
+							ModelAndView er=new ModelAndView("error");
+							er.addObject("error", "SOrry !! incorrect column size");
+							return er;
+						}
+					}catch (Exception e) {
+						System.out.println("Exception :"+e.getStackTrace());
+					}
+			return mav;
+		}
 		
 		//Invoice page Save code...............
 		@RequestMapping("/invoicesave")
