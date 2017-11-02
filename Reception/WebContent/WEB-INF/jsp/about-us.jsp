@@ -7,11 +7,11 @@
 <title>About us</title>
  <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet"   href="css/font-awesome.min.css">
 	<link href="css/animate.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">      
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+	<link href="css/responsive.css"   rel="stylesheet">
 </head>
 
  <body class="homepage">
