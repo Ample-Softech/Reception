@@ -33,14 +33,41 @@
 	<script src="js/dcalendar.picker.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+	
+	
+	
 </head>
  <body class="homepage">   
 			<br>
 
-<jsp:include page="head.jsp"></jsp:include>
+		<jsp:include page="head.jsp"></jsp:include>
 		<jsp:include page="setup.jsp"></jsp:include>
 				
 <!--------------------------------------Body --------------------------------------------------->		
+
+<script type="text/javascript">
+	function checkit()
+	{ 
+		var t2=document.form11.so1.value;
+		 if (t2.length === 0 || t2 === "")
+         {
+             alert("Should not be blank.");
+             document.getElementById("so1").focus();
+              return false; 
+         }
+	}
+	function checkit1()
+	{ 
+		var t22=document.form22.so11.value;
+		 if (t22.length === 0 || t22 === "")
+         {
+             alert("Should not be blank.");
+             document.getElementById("so11").focus();
+              return false; 
+         }
+	}
+	</script>
+	
 	<section>
 	<div class="container" align="center">
 	<h3>${msg }</h3>
@@ -49,23 +76,23 @@
 	<c:set var="addsource" value="${addsource}"></c:set>
 	<c:choose>
 	<c:when test="${sourceedit=='yes'}">
-		<form:form action="/Reception/updateSource" onsubmit="checkit()" name="form1" >
+		<form:form action="/Reception/updateSource" onsubmit="return checkit();"  name="form11" >
 			<form:hidden path="SourceId" />
-			<form:input path="SourceOfInfo" id="source"/>
-			<input type="submit" value="Update" class="btn btn-info">
+			<form:input path="SourceOfInfo" id="so1" name="so1"  />
+			<input type="submit"  value="Update"  class="btn btn-info">
 		</form:form>
 	 </c:when>
-	 
-	 <c:when test="${addsource=='yes'}">
-		<form:form action="/Reception/AddSource">
-			<form:input path="SourceOfInfo" />
+	  <c:when test="${addsource=='yes'}">
+		<form:form action="/Reception/AddSource" onsubmit="return checkit1();" name="form22">
+			<form:input path="SourceOfInfo" id="so11" name="so11"/>
 			<input type="submit" value="Add" class="btn btn-info">
 		</form:form>
-	
 	 </c:when>
 	<c:otherwise>
 		</c:otherwise>
 	</c:choose>
+	 
+	   
 	  
 	<thead><h1>Source Of Ads</h1></thead>
 	<div align="right"><a href="/Reception/addSourceOfInfo" class="btn btn-success">Add New Source</a></div>
@@ -93,5 +120,9 @@
     <script src="js/jquery.isotope.min.js"></script>   
     <script src="js/wow.min.js"></script>
 	<script src="js/main.js"></script>    
+	
+	
+	
+	</script>
 </body>
 </html>
