@@ -37,15 +37,12 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 	<script type='text/javascript'>
-
-	/* 
-
-	function ClientNameValidation()
+/*          function ClientNameValidation()
          {
-        	 validation for ClientName---------------------------
+        	//  validation for ClientName---------------------------
         	var ClientName=document.Enquiry.ClientName.value;
-        	 var cname = /^[A-Za-z]{2,50}$/; 
-        	 var cname =/^[a-zA-Z-. ]+$/;
+        	/* var cname = /^[A-Za-z]{2,50}$/; */
+        	var cname =/^[a-zA-Z-. ]+$/;
         	
              if (ClientName.length === 0 || ClientName === "")
             {
@@ -263,7 +260,7 @@
         
        					 <div class="form-group col-md-6 col-sm-6">
             				<label for="ClientFirm">Firm Name (if applicable )	</label>
-           		 		<input type="text" name="ClientFirm" class="form-control input-sm" id="name" placeholder="" pattern="^[a-zA-Z-0-9\s]+$" required>
+           		 		<input type="text" name="ClientFirm" class="form-control input-sm" id="name" placeholder="" pattern="^[a-zA-Z-0-9\s]+$">
         				</div>
         
        					 <div class="form-group col-md-6 col-sm-6">
@@ -304,7 +301,7 @@
 
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="pincode">Pincode</label>
-            				<input type="text" name="pincode" class="form-control input-sm" id="pincode" placeholder="" onchange="pincodeValidation();" required>
+            				<input type="text" name="pincode" class="form-control input-sm" id="pincode" placeholder="" pattern=^[1-9][0-9]{5}$ required>
         				</div>
         
         
