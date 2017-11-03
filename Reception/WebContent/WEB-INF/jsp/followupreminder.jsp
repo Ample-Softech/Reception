@@ -59,6 +59,7 @@
 	<jsp:include page="setup.jsp"></jsp:include>
 	<!-- -------------------------------------------------------------------------------------------- -->
 	 <div id="parentDiv">
+	 
             <form:form name="myform" action="/Reception/editfollowup" method="POST"  class="form-horizontal" role="form" >              
                 <div class="form-group active">
                     <label for="FollowUpId" class="col-sm-5 control-label">Follow up number</label>
@@ -112,8 +113,8 @@
                 <div class="form-group">
                     <label for="FollowUpMode" class="col-sm-5 control-label">Follow Up Mode</label>
                     <div class="col-sm-7">
-                        <select name="FollowUpMode" class="form-control input-md" id="FollowUpMode">
-						<option>Mode of Follow up</option>
+                        <select name="FollowUpMode" class="form-control input-md" id="FollowUpMode" required>
+						<option value="">Mode of Follow up</option>
 						<option>Call</option>
 						<option>Email</option>
 						<option>SMS</option>
@@ -135,7 +136,7 @@
                     <label for="Needed" class="col-sm-5 control-label">Need To Remind</label>
                     <div class="col-sm-7">
                         <select name="Needed" onchange="search()" class="form-control input-md" id="Needed" required>
-						<option>Need to remind?</option>
+						<option value="">Need to remind?</option>
 						<option value="y">Yes</option>
 						<option value="n">No</option>
 						</select>
@@ -167,7 +168,7 @@
                 </div>
             </form:form> <!-- /form -->
        </div>         	
-<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->	
+<!----------------------------------------------------------------------------------------------------------------------------------------- -->	
 	
 
 <jsp:include page="footer.jsp"></jsp:include>
