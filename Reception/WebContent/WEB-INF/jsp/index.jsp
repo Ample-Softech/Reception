@@ -37,12 +37,15 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 	<script type='text/javascript'>
-/*          function ClientNameValidation()
+
+	/* 
+
+	function ClientNameValidation()
          {
-        	//  validation for ClientName---------------------------
+        	 validation for ClientName---------------------------
         	var ClientName=document.Enquiry.ClientName.value;
-        	/* var cname = /^[A-Za-z]{2,50}$/; */
-        	var cname =/^[a-zA-Z-. ]+$/;
+        	 var cname = /^[A-Za-z]{2,50}$/; 
+        	 var cname =/^[a-zA-Z-. ]+$/;
         	
              if (ClientName.length === 0 || ClientName === "")
             {
