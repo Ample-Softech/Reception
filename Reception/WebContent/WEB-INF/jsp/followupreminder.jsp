@@ -46,6 +46,10 @@
 			 var v3=document.getElementById("NextFollowUpDate").disabled=false;
 		 }
 	}
+	 
+	 function checkit() {
+		
+	}
 </script>
 
 </head>

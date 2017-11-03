@@ -40,7 +40,29 @@
 		<jsp:include page="setup.jsp"></jsp:include>
 		
 		
-		<section>
+	<script type="text/javascript">
+	function check1()
+	{ 
+		var t2=document.form11.so11.value;
+		 if (t2.length === 0 || t2 === "")
+         {
+             alert("Should not be blank.");
+             document.getElementById("so11").focus();
+              return false; 
+         }
+	}
+	function check2()
+	{ 
+		var t22=document.form22.so22.value;
+		 if (t22.length === 0 || t22 === "")
+         {
+             alert("Should not be blank.");
+             document.getElementById("so22").focus();
+              return false; 
+         }
+	}
+	</script>
+	<section>
 	<div align="center" class="colo-md-12">
 
 	<h3>${msg }</h3>
@@ -48,13 +70,13 @@
 		<c:set var="addtech" value="${addtech}"></c:set>
 		<c:choose>
 			<c:when test="${tech=='yes'}">
-				<form:form action="/Reception/updateTech" class="form-horizontal">
+				<form:form action="/Reception/updateTech" onsubmit="return check1();" class="form-horizontal" name="form11">
 				<form:hidden path="TechnologyId"/>
 				<div class=" col-md-8 col-md-offset-4">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="col-sm-10">
-								<form:input path="Technology" class="form-control input-sm"/>
+								<form:input path="Technology" class="form-control input-sm" id="so11" name="so11"/>
 							</div>
 							<div class="col-sm-2">
 								<input type="submit" value="Update" class="form-control btn btn-info input-sm">
@@ -66,7 +88,7 @@
 	 		</c:when>
 	 
 	 		<c:when test="${addtech=='yes'}">
-				<form:form action="/Reception/AddTech">
+				<form:form action="/Reception/AddTech" name="form22" onsubmit="return check2();">
 					<%-- <form:input path="Technology" />
 					<input type="submit" value="Add" class="btn btn-info">
 					 --%>
@@ -74,7 +96,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="col-sm-10">
-								<form:input path="Technology" class="form-control input-sm"/>
+								<form:input path="Technology" name="so22" id="so22" class="form-control input-sm" />
 							</div>
 							<div class="col-sm-2">
 								<input type="submit" value="Add" class="form-control btn btn-info input-sm">
