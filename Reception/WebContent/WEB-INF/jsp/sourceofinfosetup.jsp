@@ -78,12 +78,14 @@
 	<c:when test="${sourceedit=='yes'}">
 		<form:form action="/Reception/updateSource" onsubmit="return checkit();"  name="form11" >
 			<form:hidden path="SourceId" />
+			<label for="ClientContact">Update Source </label>
 			<form:input path="SourceOfInfo" id="so1" name="so1"  />
 			<input type="submit"  value="Update"  class="btn btn-info">
 		</form:form>
 	 </c:when>
 	  <c:when test="${addsource=='yes'}">
 		<form:form action="/Reception/AddSource" onsubmit="return checkit1();" name="form22">
+			<label for="ClientContact">Add new Source </label>
 			<form:input path="SourceOfInfo" id="so11" name="so11"/>
 			<input type="submit" value="Add" class="btn btn-info">
 		</form:form>
@@ -95,15 +97,16 @@
 	   
 	  
 	<thead><h1>Source Of Ads</h1></thead>
-	<div align="right"><a href="/Reception/addSourceOfInfo" class="btn btn-success">Add New Source</a></div>
-	<tr><th>Source ID</th><th>Source</th></tr>  
+	
+	<div align="right"><a href="/Reception/addSourceOfInfo" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Source</a></div>
+	<tr><th>Source ID</th><th>Source</th><th>Edit</th><th>Remove</th></tr>  
 	<c:forEach var="st" items="${list}">
 	<tr>
 	<td>${st.getSourceId() }</td>
 	<td>${st.getSourceOfInfo() }</td>
 	
-	<td><a href="/Reception/updateSourceOfInfo/${ st.getSourceId()}" class="btn btn-info">Edit</a></td>
-	<td><a href="/Reception/deleteSourceOfInfo/${ st.getSourceId()}" class="btn btn-danger">Delete</a></td>
+	<td><a href="/Reception/updateSourceOfInfo/${ st.getSourceId()}" class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+	<td><a href="/Reception/deleteSourceOfInfo/${ st.getSourceId()}" class="btn btn-danger"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 	</tr>
 	</c:forEach>
 	</table>

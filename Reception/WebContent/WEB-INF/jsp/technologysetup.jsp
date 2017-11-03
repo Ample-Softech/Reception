@@ -76,6 +76,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="col-sm-10">
+								<label for="ClientContact">update Technology</label>
 								<form:input path="Technology" class="form-control input-sm" id="so11" name="so11"/>
 							</div>
 							<div class="col-sm-2">
@@ -92,15 +93,18 @@
 					<%-- <form:input path="Technology" />
 					<input type="submit" value="Add" class="btn btn-info">
 					 --%>
-					<div class=" col-md-8 col-md-offset-4">
+					<div class=" col-md-6 col-md-offset-6">
 					<div class="row">
-						<div class="col-sm-12">
-							<div class="col-sm-10">
-								<form:input path="Technology" name="so22" id="so22" class="form-control input-sm" />
-							</div>
-							<div class="col-sm-2">
-								<input type="submit" value="Add" class="form-control btn btn-info input-sm">
-							</div>
+						<div class="col-sm-8 col-md-offset-4">
+						<div class="col-sm-2">
+							<label for="">New Technology</label>
+						</div>
+						<div class="col-sm-8">
+							<form:input path="Technology" name="so22" id="so22" class="form-control " />
+						</div>
+						<div class="col-sm-2">
+							<input type="submit" value="Add" class="form-control btn btn-info input-sm">
+						</div>
 						</div>
 					</div>
 				</div>
