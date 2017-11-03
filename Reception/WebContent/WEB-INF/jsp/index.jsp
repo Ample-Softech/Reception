@@ -37,7 +37,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 	<script type='text/javascript'>
-         function ClientNameValidation()
+/*          function ClientNameValidation()
          {
         	//  validation for ClientName---------------------------
         	var ClientName=document.Enquiry.ClientName.value;
@@ -195,7 +195,7 @@
          } 
          } 
           
-          
+           */
           
          function TechnologyIdValidation()
          {
@@ -223,12 +223,7 @@
      	
 	</script>
 	<!-- Validation code End-------------------------------------------------------------------------------- -->    
-<!-- =======================================================
-        Theme Name: Gp
-        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->  
+  
 </head>
  <body class="homepage">
  <jsp:include page="head.jsp"></jsp:include>   
@@ -259,23 +254,23 @@
 					
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientName">Client Name*	</label>
-            				<input type="text" name="ClientName" class="form-control input-sm" id="name" placeholder=""  onchange="ClientNameValidation();" required>
-            				<!-- onclick="validateForm();"  -->
+            				<input type="text" name="ClientName" class="form-control input-sm" id="name" placeholder="" pattern="^[a-zA-Z\s]+$" required>
+            				<!--onchange="ClientNameValidation();"  -->
         				</div>
         
        					 <div class="form-group col-md-6 col-sm-6">
             				<label for="ClientFirm">Firm Name (if applicable )	</label>
-           		 			<input type="text" name="ClientFirm" class="form-control input-sm" id="name" placeholder="" onchange="ClientFirmValidation();" required>
+           		 		<input type="text" name="ClientFirm" class="form-control input-sm" id="name" placeholder="" pattern="^[a-zA-Z-0-9\s]+$" required>
         				</div>
         
        					 <div class="form-group col-md-6 col-sm-6">
             				<label for="ClientEmailId">Email*</label>
-            				<input type="email" name="ClientEmailId" class="form-control input-sm" id="email" placeholder="" onchange="ClientEmailIdValidation();" required>
+            				<input type="email" name="ClientEmailId" class="form-control input-sm" id="email" placeholder="" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
         				</div>
 
        					 <div class="form-group col-md-6 col-sm-6">
        					     <label for="ClientContact">Mobile*</label>
-        				   	 <input type="text" name="ClientContact" class="form-control input-sm" id="mobile" placeholder="" onchange="ClientContactValidation();" required>
+                         <input type="text" name="ClientContact" class="form-control input-sm" id="mobile" placeholder="" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" onchange="ClientContactValidation();" required>
         				</div>
 
 						<div class="form-group col-md-6 col-sm-6">
@@ -285,12 +280,12 @@
 	
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientCity">City*</label>
-            				<input type="text" name="ClientCity" class="form-control input-sm" id="city" placeholder="" onchange="ClientCityValidation();" required>
+            				<input type="text" name="ClientCity" class="form-control input-sm" id="city" placeholder="" pattern="^[a-zA-Z\s]+$" required>
         				</div>
 	
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientState">State*</label>
-            				<input type="text" name="ClientState" class="form-control input-sm" id="state" placeholder="" onchange="ClientStateValidation();" required>
+            				<input type="text" name="ClientState" class="form-control input-sm" id="state" placeholder="" pattern="^[a-zA-Z\s]+$" required>
         				</div>
 
 						 <div class="form-group col-md-6 col-sm-6">
@@ -299,7 +294,7 @@
 	   					</div>
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientCountry">Country*</label>
-            				<input type="text" name="ClientCountry" class="form-control input-sm" id="country" placeholder="" onchange="ClientCountryValidation();" required>
+            				<input type="text" name="ClientCountry" class="form-control input-sm" id="country" placeholder="" pattern="^[a-zA-Z\s]+$" required>
        	 				</div>
         
        
