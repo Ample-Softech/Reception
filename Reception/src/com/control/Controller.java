@@ -53,7 +53,7 @@ import com.model.Invoice;
 @SessionAttributes("thought")
 public class Controller {
 	
-	
+	//controller class
 	@Autowired
 	ClientDao cdao;	//USED IN MOST OF THE FUNCTIONS IN CONTROLLER
 
