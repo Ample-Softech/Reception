@@ -244,11 +244,20 @@ public class Controller {
 		public ModelAndView registerq(@ModelAttribute ("enq") NewEnquiry enq,@ModelAttribute ("c") Client c) {
 			NewEnquiry e=new NewEnquiry();
 			int id=cdao.insert(c);
+			ModelAndView mav=new ModelAndView("index");
+			List<Technology> tlist=dao.getTechlogies();
+			List<SourceOfInfo> slist=dao.getSourceOfInfos();
+			mav.addObject("tlist",tlist);
+			mav.addObject("slist",slist);
 			if(id==0)
-				return new ModelAndView("index","msg","user is already present with this mobile number,cannot save your query");
+			{
+				mav.addObject("msg","user is already present with this mobile number,cannot save your query" );
+				return mav;
+			}	
 			enq.setClientId(id);
 			edao.save(enq);
-			return new ModelAndView("index","msg","Enquiry saved successfully");
+			mav.addObject("msg", "Enquiry saved successfully");
+			return mav;
 		}
 
 //----------------------------------------------------------------------------------------------------------------------
