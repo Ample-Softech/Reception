@@ -63,7 +63,7 @@
 	}
 	</script>
 	<section>
-	<div align="center" class="colo-md-12">
+	<div class="container" align="center">
 
 	<h3>${msg }</h3>
 		<c:set var="tech" value="${tech}"></c:set>
@@ -74,12 +74,14 @@
 				<form:hidden path="TechnologyId"/>
 				<div class=" col-md-8 col-md-offset-4">
 					<div class="row">
-						<div class="col-sm-12">
-							<div class="col-sm-10">
+						<div class="col-sm-8 col-md-offset-4 ">
+							<div class="col-sm-4">
 								<label for="ClientContact">update Technology</label>
+							</div>
+							<div class="col-sm-5">
 								<form:input path="Technology" class="form-control input-sm" id="so11" name="so11"/>
 							</div>
-							<div class="col-sm-2">
+							<div class="col-sm-3">
 								<input type="submit" value="Update" class="form-control btn btn-info input-sm">
 							</div>
 						</div>
@@ -114,17 +116,17 @@
 			</c:otherwise>
 			</c:choose>
 	
-	<table  class="table table-striped table- table-bordered table-hover table-inverse">  
+	<table  class="table table-sm table-striped table-bordered table-hover table-inverse">  
 	<thead><h1>Technologies We Work On</h1></thead>
-	<tr class=""><a href="/Reception/AddTechnology" class="btn btn-primary">Add New Technology</a></tr>
-	<tr><th>Technology ID</th><th>Technology</th></tr>  
+	<div align="right"><a href="/Reception/AddTechnology" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Technology</a></div>
+	<tr><th>Technology ID</th><th>Technology</th><th>Edit</th><th>Delete</th></tr>  
 	<c:forEach var="st" items="${list}">
 	<tr>
 	<td >${st.getTechnologyId() }</td>
 	<td>${st.getTechnology() }</td>
 	
-	<td ><a href="/Reception/updatetechnology/${ st.getTechnologyId()}" class="btn btn-info">Edit</a></td>
-	<td ><a href="/Reception/deleteTech/${ st.getTechnologyId()}" class="btn btn-danger form-control" >Delete</a></td>
+	<td ><a href="/Reception/updatetechnology/${ st.getTechnologyId()}" class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+	<td ><a href="/Reception/deleteTech/${ st.getTechnologyId()}" class="btn btn-danger " ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 	</tr>
 	</c:forEach>
 	</table>
