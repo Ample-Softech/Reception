@@ -1,17 +1,8 @@
-<%@page import="java.awt.Color"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page import="com.lowagie.text.*"%>
 <%@page import="java.io.*"%>
 <%@ page import="com.model.*" %>
+<%@page import="java.awt.Color"%>
+<%@page import="com.lowagie.text.*"%>
 <%@ page import="com.lowagie.text.pdf.*" %>
-<%@ page import="org.springframework.web.servlet.view.document.AbstractPdfView" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>accountPdfView</title>
-</head>
-<body>
 <%!
 
 	private void addCell(PdfPTable table, String str,int verAlig, int holAlig,int colSpan,Font font)
@@ -28,11 +19,16 @@
 <%
 try
 {
-	Quotation in = (Quotation) session.getAttribute("qoutation");
 	Document document = new Document();
+
 	response.setContentType("application/pdf");
 	PdfWriter.getInstance(document, response.getOutputStream());
+
+//	PdfWriter.getInstance(document, new FileOutputStream(new File("F:\\hello.pdf")));
+
 	document.open();
+	Quotation in = (Quotation) session.getAttribute("qoutation");
+
 	PdfPTable headerTable = new PdfPTable(1);
 	headerTable.setWidthPercentage(100);
 	headerTable.getDefaultCell().setBorderWidth(3);
@@ -42,7 +38,7 @@ try
 	Font f3 = new Font(Font.HELVETICA, 22,Font.UNDEFINED, java.awt.Color.red);
  	addCell(headerTable, "Quotation", Element.ALIGN_MIDDLE, Element.ALIGN_CENTER,0,f3);
 	
- 	Image image = Image.getInstance("C:\\Users\\santo\\git\\Reception\\Reception\\WebContent\\images\\AmpleLogo.png");
+ 	Image image = Image.getInstance("C:\\Users\\sagar\\git\\Reception\\Reception\\WebContent\\images\\AmpleLogo.png");
 	image.scaleAbsolute(200, 58);
 	document.add(image);
 	addCell(headerTable, "", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f1);
@@ -94,7 +90,3 @@ out.clear(); // where out is a JspWriter
 out = pageContext.pushBody();
 
 %>
-
-
-</body>
-</html>
