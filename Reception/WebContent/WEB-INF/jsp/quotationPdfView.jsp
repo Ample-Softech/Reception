@@ -33,50 +33,97 @@ try
 	headerTable.setWidthPercentage(100);
 	headerTable.getDefaultCell().setBorderWidth(3);
 	
-	Font f1 = new Font(Font.HELVETICA, 17,Font.UNDEFINED, java.awt.Color.black);
-	Font f2 = new Font(Font.HELVETICA, 13,Font.UNDEFINED, java.awt.Color.black);
-	Font f3 = new Font(Font.HELVETICA, 22,Font.UNDEFINED, java.awt.Color.red);
+	Font f1 = new Font(Font.TIMES_ROMAN, 17,Font.BOLD, java.awt.Color.black);
+	Font f2 = new Font(Font.TIMES_ROMAN, 13,Font.ITALIC, java.awt.Color.black);
+	Font f3 = new Font(Font.TIMES_ROMAN, 17,Font.BOLDITALIC, java.awt.Color.red);
  	addCell(headerTable, "Quotation", Element.ALIGN_MIDDLE, Element.ALIGN_CENTER,0,f3);
 	
  	Image image = Image.getInstance("C:\\Users\\sagar\\git\\Reception\\Reception\\WebContent\\images\\AmpleLogo.png");
-	image.scaleAbsolute(200, 58);
+	image.scaleAbsolute(180, 60);
 	document.add(image);
-	addCell(headerTable, "", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f1);
+	
+	addCell(headerTable, "", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f3);
 	addCell(headerTable, "Ample Softech System Pvt.Ltd", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f1);
-	addCell(headerTable, "Shantiban comercial complex", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
-	addCell(headerTable, "Kothrud, pune, 411038", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
+	addCell(headerTable, "Shantiban Comercial Complex,", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
+	addCell(headerTable, "Kothrud, Pune(411038).", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
+	
+//	addCell(headerTable, "To:-\n"+in.getClientName(), Element.ALIGN_RIGHT, Element.ALIGN_RIGHT,2,f2);
+//	addCell(headerTable, , Element.ALIGN_RIGHT, Element.ALIGN_RIGHT,100,f2);
+
 	document.add(headerTable);
 	
 	Paragraph p = new Paragraph();
 	 p.setAlignment(Element.ALIGN_RIGHT);
 	 p.add("To:-		            	                        ");
-	 p.add("\nClient Name:-  "+in.getClientName()      );
+	 p.add("\nClient Name:-  " + in.getClientName());
 	 document.add(p);
 	System.out.println(in);
 	
-	Table t;
+	Phrase phrase = new Phrase();
+	Chunk chunk;
+	Font f4 = new Font(Font.TIMES_ROMAN, 11, Font.BOLD, java.awt.Color.black);
+	Font f5 = new Font(Font.COURIER, 12,Font.NORMAL, java.awt.Color.black);
+
+	Table t;	
     t = new Table(2);
-    t.setBorderWidth(1);
-	//t.setBorderColor(new Color(15, 90, 160));
-	t.setPadding(2);
-	t.setSpacing(4);
-	t.addCell("EnquiryID");
-	t.addCell(in.getEnquiryId()+"");
-	t.addCell("ClientId");
-	t.addCell(in.getClientId() + "");  
-	t.addCell("ClientEmailId");
-	t.addCell(in.getClientEmailId());
-	t.addCell("clientContact");
-	t.addCell(in.getClientContact());
-	t.addCell("ProjectDescription");
-	t.addCell(in.getProjectDescription());
-	t.addCell("QuotationDate");
-	t.addCell(in.getQuotationDate());
-	t.addCell("QuotationDueDate");
-	t.addCell(in.getQuotationDueDate());
-	t.addCell("Amount");
-	t.addCell(in.getAmount()+"");
+	t.setPadding(3);
+
+	chunk = new Chunk("Enquiry ID", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getEnquiryId()+"", f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+
+	chunk = new Chunk("Client Id", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getClientId()+"", f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+
+	chunk = new Chunk("Client Email-Id", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getClientEmailId(), f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
 	
+	chunk = new Chunk("Client Contact", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getClientContact(), f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	
+	chunk = new Chunk("Project Description", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getProjectDescription(), f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	
+	chunk = new Chunk("Quotation Date", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getQuotationDate(), f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+
+	chunk = new Chunk("Quotation Due-Date", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getQuotationDueDate(), f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+
+	chunk = new Chunk("Amount", f4);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+	chunk = new Chunk(in.getAmount()+"", f5);
+	phrase = new Phrase(chunk);
+	t.addCell(phrase);
+		
 	document.add(t);
 	document.close();
 
