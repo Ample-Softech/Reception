@@ -36,31 +36,49 @@ try
 	Font f1 = new Font(Font.TIMES_ROMAN, 17,Font.BOLD, java.awt.Color.black);
 	Font f2 = new Font(Font.TIMES_ROMAN, 13,Font.ITALIC, java.awt.Color.black);
 	Font f3 = new Font(Font.TIMES_ROMAN, 17,Font.BOLDITALIC, java.awt.Color.red);
- 	addCell(headerTable, "Quotation", Element.ALIGN_MIDDLE, Element.ALIGN_CENTER,0,f3);
+	f3.setStyle(Font.UNDERLINE);
+ 	addCell(headerTable, "Quotation\n", Element.ALIGN_MIDDLE, Element.ALIGN_CENTER,0,f3);
 	
  	Image image = Image.getInstance("C:\\Users\\sagar\\git\\Reception\\Reception\\WebContent\\images\\AmpleLogo.png");
 	image.scaleAbsolute(180, 60);
 	document.add(image);
 	
-	addCell(headerTable, "", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f3);
-	addCell(headerTable, "Ample Softech System Pvt.Ltd", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f1);
+	addCell(headerTable, "\nAmple Softech System Pvt.Ltd", Element.ALIGN_LEFT, Element.ALIGN_LEFT,0,f1);
 	addCell(headerTable, "Shantiban Comercial Complex,", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
 	addCell(headerTable, "Kothrud, Pune(411038).", Element.ALIGN_LEFT, Element.ALIGN_LEFT,150,f2);
 	
-//	addCell(headerTable, "To:-\n"+in.getClientName(), Element.ALIGN_RIGHT, Element.ALIGN_RIGHT,2,f2);
-//	addCell(headerTable, , Element.ALIGN_RIGHT, Element.ALIGN_RIGHT,100,f2);
-
 	document.add(headerTable);
-	
-	Paragraph p = new Paragraph();
-	 p.setAlignment(Element.ALIGN_RIGHT);
-	 p.add("To:-		            	                        ");
-	 p.add("\nClient Name:-  " + in.getClientName());
-	 document.add(p);
-	System.out.println(in);
-	
+
 	Phrase phrase = new Phrase();
 	Chunk chunk;
+	
+	Paragraph p = new Paragraph();
+	p.setAlignment(Element.ALIGN_RIGHT);
+
+	String cn = "\nClient Name:-  " + in.getClientName();
+	cn = cn.replaceAll("\\s", "");
+	chunk = new Chunk("To:-");
+	chunk.setFont(new Font(Font.TIMES_ROMAN, 14, Font.BOLD, java.awt.Color.black));
+	for(int i=0; i<(cn.length()-2); i++) {
+		chunk.append("  ");
+	}
+	phrase = new Phrase(chunk);
+	p.add(phrase);
+
+	chunk = new Chunk("\nClient Name:- ");
+	chunk.setFont(new Font(Font.TIMES_ROMAN, 12, Font.BOLDITALIC, java.awt.Color.black));
+	phrase = new Phrase(chunk); 
+	p.add(chunk);
+
+	chunk = new Chunk(in.getClientName());
+	chunk.setFont(new Font(Font.COURIER, 12, Font.UNDEFINED, java.awt.Color.black));
+	phrase = new Phrase(chunk); 
+	p.add(chunk);
+	
+	document.add(p);
+	System.out.println(in);
+	
+	
 	Font f4 = new Font(Font.TIMES_ROMAN, 11, Font.BOLD, java.awt.Color.black);
 	Font f5 = new Font(Font.COURIER, 12,Font.NORMAL, java.awt.Color.black);
 
@@ -68,7 +86,7 @@ try
     t = new Table(2);
 	t.setPadding(3);
 
-	chunk = new Chunk("Enquiry ID", f4);
+	chunk = new Chunk("Enquiry Id", f4);
 	phrase = new Phrase(chunk);
 	t.addCell(phrase);
 	chunk = new Chunk(in.getEnquiryId()+"", f5);
@@ -110,19 +128,11 @@ try
 	phrase = new Phrase(chunk);
 	t.addCell(phrase);
 
-	chunk = new Chunk("Quotation Due-Date", f4);
-	phrase = new Phrase(chunk);
-	t.addCell(phrase);
-	chunk = new Chunk(in.getQuotationDueDate(), f5);
-	phrase = new Phrase(chunk);
-	t.addCell(phrase);
+	t.addCell(new Phrase(new Chunk("Quotation Due-Date", f4)));
+	t.addCell(new Phrase(new Chunk(in.getQuotationDueDate(), f5)));
 
-	chunk = new Chunk("Amount", f4);
-	phrase = new Phrase(chunk);
-	t.addCell(phrase);
-	chunk = new Chunk(in.getAmount()+"", f5);
-	phrase = new Phrase(chunk);
-	t.addCell(phrase);
+	t.addCell(new Phrase(new Chunk("Amount", f4)));
+	t.addCell(new Phrase(new Chunk(in.getAmount()+"", f5)));
 		
 	document.add(t);
 	document.close();
