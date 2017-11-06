@@ -67,7 +67,7 @@
 					
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientName">Client Name*	</label>
-            				<input type="text" name="ClientName" class="form-control input-sm" id="name" placeholder="" pattern="^[a-zA-Z\s]+$" required>
+            				<input type="text" name="ClientName" class="form-control input-sm" id="name" placeholder="" pattern="^[a-zA-Z\s]+$" minlength="2" required>
             				<!--onchange="ClientNameValidation();"  -->
         				</div>
         
@@ -88,26 +88,26 @@
 
 						<div class="form-group col-md-6 col-sm-6">
 	    				  	<label for="ClientAddress">Address*</label>
-	      					<textarea name="ClientAddress" class="form-control input-sm" id="address" rows="3" required></textarea>
+	      					<textarea name="ClientAddress" class="form-control input-sm" id="address" rows="3" minlength="3" required></textarea>
 	   					</div>
 	
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientCity">City*</label>
-            				<input type="text" name="ClientCity" class="form-control input-sm" id="city" placeholder="" pattern="^[a-zA-Z\s]+$" required>
+            				<input type="text" name="ClientCity" class="form-control input-sm" id="city" placeholder="" pattern="^[a-zA-Z\s]+$" minlength="3" required>
         				</div>
 	
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientState">State*</label>
-            				<input type="text" name="ClientState" class="form-control input-sm" id="state" placeholder="" pattern="^[a-zA-Z\s]+$" required>
+            				<input type="text" name="ClientState" class="form-control input-sm" id="state" placeholder="" pattern="^[a-zA-Z\s]+$" minlength="2" required>
         				</div>
 
 						 <div class="form-group col-md-6 col-sm-6">
 	    					  	<label for="EnquiryDescription">Enquiry Description*</label>
-	      						<textarea name="EnquiryDescription" class="form-control input-sm" id="address" rows="3" required></textarea> 
+	      						<textarea name="EnquiryDescription" class="form-control input-sm" id="address" rows="3" minlength="3" required></textarea> 
 	   					</div>
 						<div class="form-group col-md-6 col-sm-6">
             				<label for="ClientCountry">Country*</label>
-            				<input type="text" name="ClientCountry" class="form-control input-sm" id="country" placeholder="" pattern="^[a-zA-Z\s]+$" required>
+            				<input type="text" name="ClientCountry" class="form-control input-sm" id="country" placeholder="" pattern="^[a-zA-Z\s]+$" minlength="2" required>
        	 				</div>
         
        
@@ -124,8 +124,7 @@
 								<span class="help-block">Please choose the technology</span>
      
 	    							<select name="TechnologyId" class="form-control input-sm" id="years" onchange="TechnologyIdValidation();" required>
-	   							 	<option 
-	   							 	>Select Technology </option> 
+	   							 	<option value="">Select Technology </option> 
 	    								<c:forEach items="${tlist}" var="l">	
 										<option value="${l.getTechnologyId() }">${l.getTechnology() }</option>
 		 								</c:forEach>
