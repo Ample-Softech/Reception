@@ -151,5 +151,16 @@ public class Quotation {
 	public Quotation() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "Quotation [quotationId=" + quotationId + ", clientId=" + clientId + ", EnquiryId=" + EnquiryId
+				+ ", clientName=" + clientName + ", clientContact=" + clientContact + ", clientEmailId=" + clientEmailId
+				+ ", clientAddress=" + clientAddress + ", clientCity=" + clientCity + ", clientCountry=" + clientCountry
+				+ ", clientFirm=" + clientFirm + ", projectDescription=" + projectDescription + ", quotationDate="
+				+ quotationDate + ", quotationDueDate=" + quotationDueDate + ", amount=" + amount + "]";
+	}
+	
+	
 	
 }

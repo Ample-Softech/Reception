@@ -136,8 +136,15 @@ public class Invoice {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "Invoice [FollowUpId=" + FollowUpId + ", EnquiryId=" + EnquiryId + ", ClientId=" + ClientId
+				+ ", ClientName=" + ClientName + ", ClientContact=" + ClientContact + ", ClientEmailId=" + ClientEmailId
+				+ ", QuotationId=" + QuotationId + ", QuotationDate=" + QuotationDate + ", QuotationDueDate="
+				+ QuotationDueDate + ", ProjectDescription=" + ProjectDescription + ", InvoiceId=" + InvoiceId
+				+ ", Amount=" + Amount + ", Discount=" + Discount + ", GST=" + GST + ", FinalAmount=" + FinalAmount
+				+ "]";
+	}
 
-	
-	
 		
 }
