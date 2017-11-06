@@ -980,10 +980,9 @@ public class Controller {
 				//Quotation Print code..............................
 
 				@RequestMapping("/quoteprint")
-				public ModelAndView printquote(@ModelAttribute Quotation in, Document document)
+				public ModelAndView printquote(@ModelAttribute Quotation in)
 				{
 					ModelAndView model = new ModelAndView("quotationPdfView");
-					System.out.println("Invoice = "+ in);
 					sess.setAttribute("qoutation", in);
 					return model;
 				}
