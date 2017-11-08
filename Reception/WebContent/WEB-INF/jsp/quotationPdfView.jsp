@@ -23,8 +23,10 @@ try
 	Quotation in = (Quotation) session.getAttribute("qoutation");
 	System.out.println(in);
 
+	String filename = "Quotation_"+in.getClientName()+"_"+in.getAmount();
+
 	response.setContentType("application/pdf");
-	response.setHeader("Content-Disposition", "attachment; filename=\"Quotation_"+in.getClientName()+"_"+in.getAmount()+".pdf\"");
+	response.setHeader("Content-Disposition", "attachment; filename=\""+filename+".pdf\"");
 
 	Document document = new Document();
 	PdfWriter.getInstance(document, response.getOutputStream());
