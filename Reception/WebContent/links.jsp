@@ -2,7 +2,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	  <link rel="icon" type="image/jpeg" href="ample-icon.jpeg">  
+	  <link rel="icon" type="image/jpeg" href='<c:url value="/images/ample-icon.jpeg"></c:url>'>  
 
 	<link rel="stylesheet" type="text/css" href='<c:url value="/css/animate.min.css" ></c:url>' />
     <link rel="stylesheet" type="text/css" href='<c:url value="/css/bootstrap-theme.css" ></c:url>' />
